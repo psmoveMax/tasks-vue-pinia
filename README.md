@@ -1,29 +1,17 @@
-# pinia-project
+# Список дел приложение 1.0  (VUE3 + Pinia)
 
-This template should help get you started developing with Vue 3 in Vite.
+### Установка
 
-## Recommended IDE Setup
+1. Скачайте приложение 
+2. выполните npm install для установки зависимостей
+3. выполните npm run dev, чтобы запустить
+4. Чтобы работала база данных. 
+Выполните 
+npm install -g json-server
+json-server -w ./data/db.json
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Customize configuration
+### Что еще необходимо реализовать
+1. Перевод проекта на TypeScript
+2. Базу данных перевести из JSON в Firebase
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
