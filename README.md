@@ -6,9 +6,9 @@
 2. выполните npm install для установки зависимостей
 3. выполните npm run dev, чтобы запустить
 4. Чтобы работала база данных. 
-Выполните 
-npm install -g json-server
-json-server -w ./data/db.json
+Выполните:
+1) npm install -g json-server.
+2) json-server -w ./data/db.json
 
 
 ### Что еще необходимо реализовать
