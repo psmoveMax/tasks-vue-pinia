@@ -16,26 +16,26 @@
       <button @click="filter = 'favs'">Favorite tasks</button>
     </nav>
 
-    <div class="loading" v-if="loading">Loading tasks....</div>
+    <div class="loading" v-if="taskStore.loading">Loading tasks....</div>
 
 
     <!-- task list-->
     <div class="task-list" v-if="filter === 'all'">
-      <p>You have {{ totalCount }} tasks left to do</p>
-      <div v-for="task in tasks">
+      <p>You have {{ taskStore.totalCount }} tasks left to do</p>
+      <div v-for="task in taskStore.tasks">
         <TaskDetail :task="task" />
       </div>
     </div>
 
 
     <div class="task-list" v-if="filter === 'favs'">
-      <p>You have {{ favCount }} favs left to do</p>
-      <div v-for="task in favs">
+      <p>You have {{ taskStore.favCount }} favs left to do</p>
+      <div v-for="task in taskStore.favs">
         <TaskDetail :task="task" />
       </div>
     </div>
 
-    <button @click="taskStore.$reset">reset state</button>
+
 
   </main>
 </template>
@@ -45,7 +45,6 @@ import { ref } from 'vue'
 import TaskForm from './components/TaskForm.vue'
 import TaskDetail from './components/TaskDetails.vue'
 import { useTaskStore } from './stores/TaskStore.js'
-import { storeToRefs } from 'pinia'
 
 
 export default {
@@ -53,13 +52,11 @@ export default {
   setup() {
     const taskStore = useTaskStore()
 
-    const { tasks, loading, favs, totalCount, favCount } = storeToRefs(taskStore)
-
     taskStore.getTasks()
 
     const filter = ref('all')
 
-    return { taskStore, filter, tasks, loading, favs, totalCount, favCount }
+    return { taskStore, filter }
   }
 
 }
